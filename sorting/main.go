@@ -1,43 +1,14 @@
 package main
 
-import "fmt"
+// import (
+// 	"fmt"
+// )
 
-func main() {
-	arr := []int{0, 1, 3, 3, 0, 1, 1}
+// func main() {
+// 	arr := []int{29, 83, 471, 36, 91, 8}
 
-	// Count Sort
-	sortedArr := CountingSort(arr)
-	fmt.Println(sortedArr)
-}
+// 	// Radix Sort
+// 	sortedArr := RadixSort(arr)
+// 	fmt.Println(sortedArr)
 
-func CountingSort(arr []int) []int {
-
-	// find range of arr
-	var n int
-	for val := range arr {
-		if val > n {
-			n = val
-		}
-	}
-
-	// find frequency of arr elements
-	freq := make([]int, n+1)
-	for i := 0; i < len(arr); i++ {
-		freq[arr[i]]++
-	}
-
-	// find cummilative frequency
-	for i := 1; i < len(arr); i++ {
-		freq[i] = freq[i] + freq[i-1]
-	}
-
-	// sort the array with using cummilative freq
-	sortedArr := make([]int, len(arr))
-	for i := len(arr) - 1; i >= 0; i-- {
-		sortedArr[freq[arr[i]]-1] = arr[i]
-		freq[arr[i]]--
-	}
-
-	return sortedArr
-
-}
+// }
